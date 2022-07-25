@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* rubik-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/rubik-v21-latin_cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/rubik-v21-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/rubik-v21-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/rubik-v21-latin_cyrillic-regular.woff") format("woff"), url("../fonts/rubik-v21-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/rubik-v21-latin_cyrillic-regular.svg#Rubik") format("svg");
+  /* Legacy iOS */
+}
+
+/* rubik-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/rubik-v21-latin_cyrillic-700.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/rubik-v21-latin_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/rubik-v21-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/rubik-v21-latin_cyrillic-700.woff") format("woff"), url("../fonts/rubik-v21-latin_cyrillic-700.ttf") format("truetype"), url("../fonts/rubik-v21-latin_cyrillic-700.svg#Rubik") format("svg");
+  /* Legacy iOS */
+}
+
+.header-w {
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  padding: 23px 0px 19px 0px;
+  background-color: #111111;
+  z-index: 1;
+}
+
+.header__inner {
+  max-width: 1342px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media only screen and (max-width: 991px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+.header .nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.header .nav__list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+@media only screen and (max-width: 1279px) {
+  .header .nav__list-item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+.header .nav__list-item-link {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1279px) {
+  .header .nav__list-item-link {
+    font-size: 16px;
+  }
+}
+
+.header__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__phone {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0px 76px 0px 0px;
+}
+
+@media only screen and (max-width: 1279px) {
+  .header__phone {
+    margin: 0px 30px 0px 0px;
+  }
+}
+
+.header__basket {
+  position: relative;
+}
+
+.header__basket-count-w {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #FCB500;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: -5px;
+  bottom: -4px;
+}
+
+.header__basket-count-products {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+  .burger {
+    display: block;
+  }
+}
+
+.burger::before, .burger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.burger::before {
+  top: 0;
+  left: 0;
+}
+
+.burger::after {
+  bottom: 0;
+  left: 0;
+}
+
+.burger__line-center {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #FFF;
+  top: 50%;
+  left: 0;
+}
+
+.burger--js-active::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 50%;
+}
+
+.burger--js-active::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 50%;
+}
+
+.burger--js-active .burger__line-center {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.main {
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  min-height: 792px;
+  background: url(../images/hero-background.jpg) no-repeat;
+  background-size: cover;
+  padding: 96px 0px;
+  position: relative;
+}
+
+.hero__inner {
+  max-width: 1342px;
+  width: 100%;
+  min-height: 576px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+}
+
+.hero__title {
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 152px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  z-index: 1;
+}
+
+.hero__text {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+}
+
+.hero__subtitle {
+  font-family: 'Rubik';
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.hero__description {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+}
+
+.hero__img {
+  height: 984px;
+  position: absolute;
+  top: -11%;
+  right: 0;
+  z-index: 0;
+}
+/*# sourceMappingURL=styles.css.map */
