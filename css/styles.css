@@ -27,6 +27,48 @@
   /* Legacy iOS */
 }
 
+.m-menu {
+  position: absolute;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  z-index: 4;
+}
+
+.m-menu__inner {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.m-menu__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.m-menu__nav-list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m-menu__nav-list-item {
+  margin: 0px;
+}
+
+.wrapper {
+  position: relative;
+}
+
 .header-w {
   width: 100%;
 }
@@ -36,7 +78,7 @@
   width: 100%;
   padding: 23px 0px 19px 0px;
   background-color: #111111;
-  z-index: 1;
+  z-index: 9;
 }
 
 .header__inner {
@@ -68,42 +110,14 @@
   }
 }
 
-.header .nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-}
-
-.header .nav__list-item:not(:last-child) {
+.header__list-item:not(:last-child) {
   margin-right: 40px;
 }
 
 @media only screen and (max-width: 1279px) {
-  .header .nav__list-item:not(:last-child) {
+  .header__list-item:not(:last-child) {
     margin-right: 25px;
   }
-}
-
-.header .nav__list-item-link {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 1279px) {
-  .header .nav__list-item-link {
-    font-size: 16px;
-  }
-}
-
-.header .nav__list-item-link:hover {
-  color: #FCB500;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .header__contacts {
@@ -180,6 +194,34 @@
   transition: all 0.4s ease;
 }
 
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.nav__list-item-link {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1279px) {
+  .nav__list-item-link {
+    font-size: 16px;
+  }
+}
+
+.nav__list-item-link:hover {
+  color: #FCB500;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .burger {
   display: none;
   position: relative;
@@ -222,15 +264,19 @@
 }
 
 .burger--js-active::before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  top: 50%;
+  -webkit-transform: rotate(-315deg);
+          transform: rotate(-315deg);
+  top: 48%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .burger--js-active::after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  bottom: 50%;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+  bottom: 45%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .burger--js-active .burger__line-center {
@@ -260,8 +306,8 @@
 
 @media only screen and (max-width: 575px) {
   .hero {
-    padding: 60px 0px;
-    min-height: 400px;
+    padding: 30px 0px;
+    min-height: 382px;
   }
 }
 
@@ -485,7 +531,8 @@
 
 @media only screen and (max-width: 575px) {
   .discount {
-    padding: 80px 0px;
+    padding: 30px 0px;
+    min-height: 850px;
   }
 }
 
@@ -515,7 +562,7 @@
 
 @media only screen and (max-width: 575px) {
   .discount__inner {
-    min-height: 1150px;
+    min-height: 1100px;
   }
 }
 
@@ -596,6 +643,18 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 59px;
+}
+
+@media only screen and (max-width: 575px) {
+  .discount__price {
+    margin-bottom: 35px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .discount__price {
+    margin-bottom: 20px;
+  }
 }
 
 .discount__products {
@@ -680,19 +739,19 @@
 
 @media only screen and (max-width: 991px) {
   .price--old {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .price--old {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
 @media only screen and (max-width: 575px) {
   .price--old {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
