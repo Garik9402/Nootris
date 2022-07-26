@@ -8,13 +8,21 @@
         // @include mq(sm) {}
         .m-menu {
             position: absolute;
-            padding-top: 100px;
+            padding: 130px 0px 100px 0px;
             width: 100%;
-            height: 100%;
             background-color: orange;
-            z-index: 4;
+            height: 0;
+            min-height: 0;
+            overflow: hidden;
+            &--js-toggle-drropdown {
+                height: 100%;
+                min-height: 30px;
+                overflow: visible;
+                z-index: 5;
+                transition: all 0.3s ease;
+            }
             &__inner {
-                max-width: 500px;
+                max-width: 900px;
                 width: 100%;
                 margin: 0 auto;
             }
@@ -27,12 +35,40 @@
                 align-items: center;
             }
             &__nav-list-item {
-                margin: 0px;
+                &:not(:last-child) {
+                    margin-bottom: 100px;
+                    @include mq(md) {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+            &__item-link {
+                font-family: 'Rubik', sans-serif;
+                font-weight: 400;
+                font-size: 60px;
+                line-height: 24px;
+                color: #FFFFFF;
+                text-decoration: none;
+                &:hover {
+                    color: #000000;
+                    transition: all 0.3s ease;
+                }
+                & {
+                    @include mq (lg) {
+                        font-size: 50px;
+                    }
+                    @include mq (md) {
+                        font-size: 32px;
+                    }
+                }
             }
         }
         
-        .wrapper {
+        .wrapper-content {
             position: relative;
+            &--js-toggle {
+                display: none;
+            }
         }
         
         .header-w {
@@ -74,6 +110,23 @@
                     @include mq(xxl) {
                         margin-right: 25px;
                     }
+                }
+            }
+            &__nav-item-link {
+                font-family: 'Rubik', sans-serif;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                color: #FFFFFF;
+                text-decoration: none;
+                & {
+                    @include mq(xxl) {
+                        font-size: 16px;
+                    }
+                }
+                &:hover {
+                    color: #FCB500;
+                    transition: all 0.3s ease;
                 }
             }
             &__contacts {
@@ -140,23 +193,7 @@
                 list-style: none;
             }
             &__list-item {}
-            &__list-item-link {
-                font-family: 'Rubik', sans-serif;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 24px;
-                color: #FFFFFF;
-                text-decoration: none;
-                & {
-                    @include mq(xxl) {
-                        font-size: 16px;
-                    }
-                }
-                &:hover {
-                    color: #FCB500;
-                    transition: all 0.3s ease;
-                }
-            }
+            &__list-item-link {}
         }
         
         .burger {

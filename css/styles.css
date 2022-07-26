@@ -29,15 +29,25 @@
 
 .m-menu {
   position: absolute;
-  padding-top: 100px;
+  padding: 130px 0px 100px 0px;
   width: 100%;
-  height: 100%;
   background-color: orange;
-  z-index: 4;
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.m-menu--js-toggle-drropdown {
+  height: 100%;
+  min-height: 30px;
+  overflow: visible;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .m-menu__inner {
-  max-width: 500px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
@@ -61,12 +71,49 @@
           align-items: center;
 }
 
-.m-menu__nav-list-item {
-  margin: 0px;
+.m-menu__nav-list-item:not(:last-child) {
+  margin-bottom: 100px;
 }
 
-.wrapper {
+@media only screen and (max-width: 575px) {
+  .m-menu__nav-list-item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+.m-menu__item-link {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.m-menu__item-link:hover {
+  color: #000000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 767px) {
+  .m-menu__item-link {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .m-menu__item-link {
+    font-size: 32px;
+  }
+}
+
+.wrapper-content {
   position: relative;
+}
+
+.wrapper-content--js-toggle {
+  display: none;
 }
 
 .header-w {
@@ -118,6 +165,27 @@
   .header__list-item:not(:last-child) {
     margin-right: 25px;
   }
+}
+
+.header__nav-item-link {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1279px) {
+  .header__nav-item-link {
+    font-size: 16px;
+  }
+}
+
+.header__nav-item-link:hover {
+  color: #FCB500;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header__contacts {
@@ -199,27 +267,6 @@
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-}
-
-.nav__list-item-link {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 1279px) {
-  .nav__list-item-link {
-    font-size: 16px;
-  }
-}
-
-.nav__list-item-link:hover {
-  color: #FCB500;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .burger {
