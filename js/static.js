@@ -1,3 +1,4 @@
+// открытие и закрытие меню + состояние бургера
 const burgerNode = document.querySelector('.burger')
 const drropdownNode = document.querySelector('.m-menu')
 const contentNode = document.querySelector('.wrapper-content')

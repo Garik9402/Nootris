@@ -8,7 +8,7 @@
         // @include mq(sm) {}
         .m-menu {
             position: absolute;
-            padding: 130px 0px 100px 0px;
+            padding: 130px 0px 0px 0px;
             width: 100%;
             background-color: orange;
             height: 0;
@@ -27,8 +27,17 @@
                 margin: 0 auto;
             }
             &__items {
+                min-height: 700px;
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 100px;
+                & {
+                    @include mq (md) {
+                        min-height: 500px;
+                    }
+                }
             }
             &__nav-list {
                 flex-direction: column;
@@ -43,6 +52,7 @@
                 }
             }
             &__item-link {
+                display: inline-block;
                 font-family: 'Rubik', sans-serif;
                 font-weight: 400;
                 font-size: 60px;
@@ -59,6 +69,29 @@
                     }
                     @include mq (md) {
                         font-size: 32px;
+                    }
+                    @include mq (sm) {
+                        font-size: 28px;
+                    }
+                }
+            }
+            &__phone {
+                font-family: 'Rubik', sans-serif;
+                font-weight: 400;
+                font-size: 60px;
+                line-height: 24px;
+                color: #FFFFFF;
+                text-decoration: none;
+                text-align: center;
+                & {
+                    @include mq (lg) {
+                        font-size: 50px;
+                    }
+                    @include mq (md) {
+                        font-size: 32px;
+                    }
+                    @include mq (sm) {
+                        font-size: 28px;
                     }
                 }
             }
@@ -95,8 +128,6 @@
                     }
                 }
             }
-            &__logo {}
-            &__logo-link {}
             &__menu {
                 @include mq(xl) {
                     display: none;
@@ -572,7 +603,6 @@
             &__img {
                 max-width: 100%;
             }
-            &__items {}
             &__description {
                 font-family: 'Rubik', sans-serif;
                 font-weight: 400;
